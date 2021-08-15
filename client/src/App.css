@@ -1,0 +1,321 @@
+body{
+    background: #F5F6F8;
+    color: #4D4D4D;
+    font-family: 'Nunito', sans-serif !important;
+}
+.primary-color{
+    color: #FFCCD5;
+}
+.secondary-color{
+    color: #FF758F;
+}
+.bg-gris{
+    background-color: #E5E5E5;
+}
+.bg-gris:focus{
+    box-shadow: 0 0 0 0;
+    background: #E5E5E5;
+}
+.bg-pink{
+    background: #FFCCD5;
+    color: white;
+}
+.bg-pink1{
+    background: #FF758F;
+}
+.fw-semibold{
+    font-weight: 600;
+}
+a,
+a:hover{
+    color: inherit;
+    text-decoration: none;
+}
+.popup{
+    background-color: rgba(0,0,0,0.4); 
+    z-index: 10000;
+    top: 0;
+    left: 0;
+}
+.popup .content{
+    background-color: white;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    z-index: 100;
+}
+.navbar{
+    padding: 10px 35px;
+}
+.navbar.nav-2{
+    padding: 13px 35px;
+}
+ul{
+    list-style: none;
+}
+.topBar{
+    background: white;
+}
+.topBar a{
+    color: #4D4D4D;
+}
+.topBar a:hover{
+    text-decoration: none;
+}
+.topBar .sign{
+    padding: 5px 9px;
+    color: white;
+}
+.topBar img.user{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+.topBar .dropdown-toggle{
+    all:inherit;
+    color: #FF758F;
+    cursor: pointer;
+}
+.postSlide{
+    transition: 0.3s;
+}
+.postSlide .mycard{
+    height: 254px;
+    position: relative;
+    overflow: hidden;
+}
+.postSlide .mycard img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.3s;
+}
+.mycard::after{
+    content: '';
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.12));
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: 10;
+}
+.postSlide .mycard:hover img,
+.horizCard .mycard:hover img{
+    transform: scale(1.1);
+}
+.postSlide .mycard .text-box{
+    top:64%;
+    padding: 0 18px;
+    color: white;
+    font-weight: 600;
+    z-index: 100;
+}
+.postSlide .mycard .text-box .tag{
+    font-weight: 400;
+    color: #E5E5E5;
+    font-size: 14px;
+}
+.arrows{
+    top: 47%;
+    transform: translateY(-50%);
+    color: white;
+    background: black;
+    opacity: 70%;
+    padding: 3px 7px;
+    cursor: pointer;
+    z-index: 10;
+}
+.arrows.prev{
+    left: 12px;
+}
+.arrows.next{
+    right: 12px;
+}
+.filter{
+    font-size: 14px;
+}
+.filter button,
+.filter button:hover,
+.filter button:focus,
+.filter button:active,
+.show > .btn-secondary.dropdown-toggle{
+    background: white !important;
+    color: #FF758F !important;
+    border: none;
+    box-shadow: 0 0 0 0 !important;
+}
+.posts .card img{
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+.posts .card:hover img{
+    transform: scale(1.1);
+}
+.posts .card span{
+    font-size: 14px;
+}
+.singlePost .card{
+    background: transparent;
+}
+.singlePost .card img{
+    height: 360px;
+    object-fit: cover;
+}
+.comment img{
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+}
+.comment span{
+    font-size: 14px;
+    color: #9D9D9D;
+}
+input{
+    outline: none;
+}
+.sideBar{
+    background: white;
+    height: max-content;
+}
+.sideBar ul{
+    list-style: disc;
+}
+.horizCard img{
+    width: 100%;
+    height: 142px;
+    object-fit: cover;
+    transition: 0.3s;
+}
+.horizCard .text-box{
+    top: 45%;
+    color: white;
+}
+.sideBar .about img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+.profile .about{
+    background: white;
+}
+.profile .about img{
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+}
+.aboutUs .about{
+    background: white;
+}
+.addProfile{
+    background: white;
+}
+.addProfile img{
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+}
+.login{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.login img{
+    object-fit: cover;
+}
+.login .img-box{
+    background-position: center;
+    background-size: cover;
+    height: 600px;
+}
+.login .img-box .text-box{
+    position: relative;
+    top: 47%;
+    transform: translateY(-50%);
+    color: white;
+}
+.login .img-box .text-box h2{
+    font-size: 50px;
+}
+.login input{
+    border: none;
+}
+.login .form{
+    top: 43%;
+    position: relative;
+    transform: translateY(-50%);
+}
+.login button{
+    font-size: 20px;
+}
+.login button:hover{
+    color: white;
+}
+.user-profile{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+.user-profile-sm{
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+}
+.sett-bar{
+    background: rgba(255, 204, 213, 0.63);
+}
+.sett-bar .active{
+    background: rgba(77, 77, 77, 0.63);
+    color: #FFCCD5;
+}
+.write .preview{
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+}
+.spinner{
+    top: 0;
+    left: 0;
+    background: rgba(77, 77, 77, 0.63);
+    z-index: 100;
+}
+.adminBar img{
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+}
+.adminBar .active{
+    background: rgba(77, 77, 77, 0.63);
+    color: #FFCCD5;
+}
+.users img{
+    height: 100px;
+    width: 120px;
+    object-fit: cover;
+}
+.admin-posts .card{
+    height: 200px;
+}
+.admin-posts img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.css-2b097c-container{
+    width: 30% !important;
+    display: inline-block !important;
+}
+.css-yk16xz-control,
+.css-1pahdxg-control:hover{
+    border: 1px solid #FFCCD5 !important;
+}
+.css-1pahdxg-control{
+    box-shadow: 0 0 0 1px #FFCCD5 !important;
+}
+.css-1okebmr-indicatorSeparator{
+    background: #FFCCD5 !important;
+}
+.css-tj5bde-Svg{
+    fill: #FFCCD5 !important;
+}
