@@ -5,7 +5,6 @@ const app = express();
 const categoriesRoutes = require('./routes/categoriesRoutes');
 const postsRoutes = require('./routes/postsRoutes');
 const usersRoutes = require('./routes/usersRoutes');
-const commentsRoutes = require('./routes/commentsRoutes');
 const errorMiddleware = require('./utils/errors');
 const cookieParser = require('cookie-parser');
 const rateLimit = require('express-rate-limit');
@@ -14,6 +13,8 @@ const mongoSanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean');
 const hpp = require('hpp');
 const path = require('path');
+const cors = require('cors');
+const compression = require('compression');
 
 
 
@@ -29,6 +30,9 @@ mongoose.connect(process.env.MONGO_URL ,
 
 
 
+app.enable('trust proxy')
+app.use(cors())
+app.options('*', cors())
 
 // Set security HTTP headers
 app.use(helmet());
@@ -53,6 +57,7 @@ app.use(hpp({
       'title', 'content', 'category'
     ]
 }));
+app.use(compression())
 
 app.use('/api/posts', postsRoutes);
 app.use('/api/categories', categoriesRoutes);
@@ -68,3 +73,10 @@ const PORT = process.env.PORT || 5000
 app.listen(PORT, (req,res)=>{
     console.log(`Backend running on port : ${PORT}.....`);
 })
+
+process.on('SIGTERM', () => {
+    console.log('SIGTERM recieved');
+    server.close(() => {
+      console.log('Process terminated')
+    })
+  })

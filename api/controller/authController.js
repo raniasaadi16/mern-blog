@@ -63,7 +63,7 @@ exports.login = catchAsync(async (req,res,next)=>{
         httpOnly: true,
         //secure : true
     };
-    if(process.env.NODE_ENV === 'production') cookieOption.secure = true;
+    if(req.secure || req.headers('x-forwarded-proto')=== 'https') cookieOption.secure = true;
 
     res.cookie('jwt', token, cookieOption);
 
@@ -82,7 +82,7 @@ exports.logout = catchAsync(async (req,res,next)=>{
         httpOnly: true,
         //secure : true
     };
-    if(process.env.NODE_ENV === 'production') cookieOption.secure = true;
+    if(req.secure || req.headers('x-forwarded-proto')=== 'https') cookieOption.secure = true;
     res.cookie('jwt', 'logout', cookieOption);
     res.status(200).json({status: 'success'})
 })
@@ -133,16 +133,6 @@ exports.activateAccount = catchAsync(async (req,res,next)=>{
     user.activeToken = undefined;
     user.activeTokenExpire = undefined;
     await user.save({ validateBeforeSave: false });
-    // LOGIN THE USER WITH NEW TOKEN
-    // const token = jwt.sign({id: user.id}, process.env.JWT_SECRET);
-    // const cookieOption = {
-    //     expires: new Date(Date.now() + process.env.JWT_COOKIE_EXPIRES_IN*24*60*60*1000),
-    //     httpOnly: true
-    // };
-    // // secure: true meane that will not be sent to client will send only to server
-    // if(process.env.NODE_ENV === 'production') cookieOption.secure = true;
-
-    // res.cookie('jwt', token, cookieOption);
 
     res.status(200).json({
         status: 'success',
@@ -285,7 +275,7 @@ exports.confirmNewEmail = catchAsync(async (req,res,next)=>{
         httpOnly: true,
         //secure : true
     };
-    if(process.env.NODE_ENV === 'production') cookieOption.secure = true;
+    if(req.secure || req.headers('x-forwarded-proto')=== 'https') cookieOption.secure = true;
     res.cookie('jwt', token, cookieOption);
 
     res.status(200).json({
@@ -315,7 +305,7 @@ exports.updatePass = catchAsync(async (req,res,next)=>{
         httpOnly: true,
         //secure : true
     };
-    if(process.env.NODE_ENV === 'production') cookieOption.secure = true;
+    if(req.secure || req.headers('x-forwarded-proto')=== 'https') cookieOption.secure = true;
     res.cookie('jwt', token, cookieOption);
 
     res.status(200).json({
@@ -388,7 +378,7 @@ exports.ressetPasswordUpdate = catchAsync(async (req,res,next)=>{
         httpOnly: true,
        // secure : true
     };
-    if(process.env.NODE_ENV === 'production') cookieOption.secure = true;
+    if(req.secure || req.headers('x-forwarded-proto')=== 'https') cookieOption.secure = true;
 
     res.cookie('jwt', token, cookieOption);
 

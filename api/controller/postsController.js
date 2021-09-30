@@ -45,7 +45,6 @@ exports.createPost = catchAsync(async (req,res,next) =>{
         }        
     }catch(err){
         return next(new appError('something went very wrong',500));
-        console.log(err)
     }
     const post = await Post.create({title,content,category: categoryId,user,picture});
 
